@@ -1,0 +1,22 @@
+
+total: 4
+Array
+(
+    [0] => Array
+        (
+            [student_old_code] => B003
+            [en_name] => BOW CHUN HO JAMES
+            [zh_name] => 鮑進豪
+            [en_address_1] => 
+            [en_address_2] => 
+            [en_address_3] => 
+            [zh_address_1] => 新界西貢
+            [zh_address_2] => 沙角尾村
+            [zh_address_3] => 66號地下
+            [home_tel] => 
+            [mobile] => 94484380
+            [parent_tel] => 60919395
+            [school] => 
+        )
+
+)
