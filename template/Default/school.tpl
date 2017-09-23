@@ -29,7 +29,6 @@
             <tr>
                 <th>#</th>
                 <th>Code</th>
-                <th>Old code</th>
                 <th>Name</th>
                 <th>School</th>
                 <th>Date</th>

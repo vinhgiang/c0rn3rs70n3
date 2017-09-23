@@ -47,7 +47,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Cornerstone - Management System</a>
+            <a class="navbar-brand" href="/">Cornerstone's Management System</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <!--<ul class="nav navbar-nav navbar-right">
@@ -76,7 +76,7 @@
             </ul>
             <h4>School</h4>
             <ul class="nav nav-sidebar">
-                <li class="{actionActive.school-view}"><a href="{module.school}">List</a></li>
+                <li class="{actionActive.school-view} {actionActive.school-detail}"><a href="{module.school}">List</a></li>
             </ul>
             <!--<h4>Price Mapping</h4>
             <ul class="nav nav-sidebar">
