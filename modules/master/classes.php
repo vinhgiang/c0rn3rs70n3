@@ -36,9 +36,5 @@ class MasterModel extends Model{
 		return $configure_mod;
 		
 	}
-
-    function count_game($cond = 1){
-        return $this->db->mysql_results("SELECT count(g.id) as total FROM ".$this->prefix."game g WHERE $cond ");
-    }
 	
 }

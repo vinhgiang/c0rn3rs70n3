@@ -5,15 +5,15 @@ if(!defined('_ROOT')) {
 }
 
 require_once _ROOT.'libraries/common/functions.php';
-if ($_GET)
-{
+
+if ($_GET) {
 	foreach($_GET as $key=>$val){
 		$_GET[$key] = getParam($_GET[$key]);		
 	}
 }
-if ($_COOKIE)
-{
-	foreach($_COOKIE as $key=>$val){
+
+if ($_COOKIE) {
+	foreach($_COOKIE as $key=>$val) {
 		$_COOKIE[$key] = getParam($_COOKIE[$key]);	
 	}
 }

@@ -6,7 +6,12 @@ $tpl->setfile(
     array('body'=>'school.tpl',)
 );
 
+$keyword = clean_data($_GET['keyword']);
 $cond = 1;
+if ($keyword != '') {
+    $cond = "(school_code = '$keyword' OR zh_name LIKE '%$keyword%' OR en_name LIKE '%$keyword%')";
+}
+
 $record = 20;
 $url = $system->uri;
 
