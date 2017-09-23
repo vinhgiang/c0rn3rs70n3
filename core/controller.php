@@ -28,7 +28,7 @@ class Controller extends CaoBox{
 		global $cfg;
 		$this->lang = $this->lang?$this->lang:$cfg["lang"];
 		$this->uri = rtrim($_SERVER[$GLOBALS['cfg']['server_var']],'\\/').'/';
-		$this->domain = 'http'.(isset($_SERVER['HTTPS']) && strtoupper($_SERVER['HTTPS']) != 'OFF'?'s':'').'://'.(empty($_SERVER['HTTP_HOST'])?$_SERVER['SERVER_NAME']:$_SERVER['HTTP_HOST']);
+		$this->domain = 'http' . ( ( isset($_SERVER['HTTPS']) && strtoupper($_SERVER['HTTPS']) != 'OFF' ) || strtolower(json_decode($_SERVER['HTTP_CF_VISITOR'])->scheme) == 'https' ? 's' : '') . '://'. (empty($_SERVER['HTTP_HOST']) ? $_SERVER['SERVER_NAME'] : $_SERVER['HTTP_HOST']);
 		$project = rtrim(dirname($_SERVER['SCRIPT_NAME']),'\\/').'/';
 		if($rewrite){
 			if($htaccess===true){
@@ -145,5 +145,3 @@ class Controller extends CaoBox{
 	}
 
 }
-
-?>

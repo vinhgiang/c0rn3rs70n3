@@ -163,3 +163,4 @@ class DB extends bDataStore{
 		parent::close($this->connect);
 	}
 }
+?>

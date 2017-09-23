@@ -28,4 +28,3 @@ class View extends bTemplate{
 	
 	
 }
-?>

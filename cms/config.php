@@ -7,7 +7,7 @@ if(!defined('_ROOT')) {
 //$cfg['lang'] = 'en';//if you want to run this application in 1 language ( no switch languages)
 $cfg['template'] = 'Default';
 $cfg['root_admin'] = true;
-$cfg['client'] = "Hiruscar CMS";
+$cfg['client'] = "Cornerstone's CMS";
 $cfg['sef'] = true;
 
 // config includes files for application
@@ -21,13 +21,13 @@ require_once _ROOT.'libraries/common/Pages.php';
 
 $i = -1;
 
-$i++;
-$MenuName[$i]["name"] = 'Game';
-$MenuName[$i]["class"] = "game";
-$MenuLink[$i][] = array('name'=>'Total submission', 'link'=>'?mod=game');
-$MenuLink[$i][] = array('name'=>'Shared Submission', 'link'=>'?mod=game&act=shared');
-$MenuLink[$i][] = array('name'=>'New Submission', 'link'=>'?mod=game&act=new');
-$MenuLink[$i][] = array('name'=>'Private Submission', 'link'=>'?mod=game&act=private');
+//$i++;
+//$MenuName[$i]["name"] = 'Game';
+//$MenuName[$i]["class"] = "game";
+//$MenuLink[$i][] = array('name'=>'Total submission', 'link'=>'?mod=game');
+//$MenuLink[$i][] = array('name'=>'Shared Submission', 'link'=>'?mod=game&act=shared');
+//$MenuLink[$i][] = array('name'=>'New Submission', 'link'=>'?mod=game&act=new');
+//$MenuLink[$i][] = array('name'=>'Private Submission', 'link'=>'?mod=game&act=private');
 
 /*$i++;
 $MenuName[$i]["name"] = 'Content';

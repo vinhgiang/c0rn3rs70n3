@@ -24,6 +24,9 @@ class bHooker extends CaoBox{
 		// end
 		ob_start();
 		session_start();
+		header('Powered-by: '.$this->name.' '.$this->version);
+		header('Visited: www.vinhgiang.net');
+	
 	}
 	
 	function web_footer(){
@@ -55,44 +58,4 @@ class bHooker extends CaoBox{
 		}
 		return $array;
 	}
-	
-	function getRealIpAddr()
-	{
-		if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
-		{
-		  $ip=$_SERVER['HTTP_CLIENT_IP'];
-		}
-		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
-		{
-		  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-		}
-		else
-		{
-		  $ip=$_SERVER['REMOTE_ADDR'];
-		}
-		return $ip;
-	}
-	
-	function getCurrentWeek($startDate)
-    {
-        $week = 0;
-		$currentDate = strtotime(date('Y-m-d G:i:s'));
-		$startDate =  strtotime($startDate);
-		
-		$seconds = $currentDate - $startDate;
-		
-		$days = floor($seconds/60/60/24);
-		
-		if((($days + 1) % 7) == 0)
-		{
-			$week = ($days + 1) / 7;
-		}
-		else
-		{
-			$week = (($days + 1) / 7) + 1;
-		}
-		return (int)$week;
-    }
 }
-
-?>

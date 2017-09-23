@@ -74,12 +74,11 @@
                 <li class="{actionActive.student-create}"><a href="{module.student}/{student_action.create}">New student</a></li>
                 <li class="{actionActive.student-no-school}"><a href="{module.student}/{student_action.no-school}">No school</a></li>
             </ul>
-            <!--<h4>Supplier</h4>
+            <h4>School</h4>
             <ul class="nav nav-sidebar">
-                <li class="{sub_menu_active.supplier} {sub_menu_active.supplier_edit}"><a href="/supplier">List</a></li>
-                <li class="{sub_menu_active.supplier_create}"><a href="/supplier/create">New Supplier</a></li>
+                <li class="{actionActive.school-view}"><a href="{module.school}">List</a></li>
             </ul>
-            <h4>Price Mapping</h4>
+            <!--<h4>Price Mapping</h4>
             <ul class="nav nav-sidebar">
                 <li class="{sub_menu_active.mapping} {sub_menu_active.mapping_edit}"><a href="/mapping">Import</a></li>
             </ul>-->
