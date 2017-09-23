@@ -18,7 +18,7 @@ if( $schoolId > 0 ) {
         );
 
         if( $en_name == '' || $zh_name == '' ) {
-            $response['msg'] = "Error code: 0x001";
+            $response['msg'] = "Please input student's name";
             responseJson($response);
         }
 

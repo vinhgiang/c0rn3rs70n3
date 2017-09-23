@@ -77,6 +77,7 @@
             <h4>School</h4>
             <ul class="nav nav-sidebar">
                 <li class="{actionActive.school-view} {actionActive.school-detail}"><a href="{module.school}">List</a></li>
+                <li class="{actionActive.school-create}"><a href="{module.school}/{school_action.create}">New school</a></li>
             </ul>
             <!--<h4>Price Mapping</h4>
             <ul class="nav nav-sidebar">
