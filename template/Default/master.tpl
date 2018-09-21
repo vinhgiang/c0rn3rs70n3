@@ -129,6 +129,35 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="search-student-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Search student</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="search-student-dialog" action="{module.student}" method="post">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <input class="form-control " type="text" name="keyword" placeholder="Keyword">
+                                    </div>
+                                    <div class="col-3">
+                                        <input class="btn btn-primary" type="submit" value="search">
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="row">
+                                <div class="col-12 result"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {include:tpl=body}
 
         </div>
@@ -151,15 +180,9 @@
 
 <script type="text/javascript" src="js/jquery.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
-
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/fileinput.js"></script>
 <script type="text/javascript" src="js/themes/fa/theme.js"></script>
-<script type="text/javascript" src="js/ui-grid.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
 
 <script type="text/javascript">

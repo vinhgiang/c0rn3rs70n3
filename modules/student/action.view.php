@@ -3,10 +3,18 @@
 if(!defined('_ROOT')) { exit('Access Denied'); }
 
 $tpl->setfile(
-    array('body'=>'student.tpl',)
+	array('body'=>'student.tpl',)
 );
 
-$keyword = clean_data($_GET['keyword']);
+$keyword = clean_data( $_GET['keyword'] );
+if ( $_POST ) {
+	$keyword = clean_data( $_POST['keyword'] );
+	$tpl->reset();
+	$tpl->setfile(
+		array('body'=>'student.ajax.tpl',)
+	);
+}it
+
 $cond = 1;
 if ($keyword != '') {
     $cond = "(s.student_code = '$keyword' OR s.student_old_code = '$keyword' OR s.en_name = '$keyword' OR s.zh_name = '$keyword'

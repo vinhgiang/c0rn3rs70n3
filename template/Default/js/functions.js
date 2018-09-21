@@ -52,6 +52,22 @@ $(document).ready(function(){
         $('.schoolCode').val(schoolCode);
         return false;
     });
+
+    // search student dialog
+    $('#search-student-dialog').submit(function() {
+        var url = $(this).attr('action');
+        var resultArea = $(this).parent().find('.result');
+
+        $.post(url, $(this).serialize(), function (response) {
+            $(resultArea).html(response);
+        });
+        return false;
+    });
+
+    $(document).on('click', '.select-referrer', function () {
+        var studentCode = $(this).data('student-code');
+        $('#reference').val(studentCode);
+    });
 });
 
 /* Common script */
