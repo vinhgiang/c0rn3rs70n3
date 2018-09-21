@@ -6,9 +6,9 @@ $tpl->setfile(
     array('body'=>'student.detail.tpl',)
 );
 
-$studentId = intval( $system->params[2] );
+$studentId = clean_data( $system->params[2] );
 
-if( $studentId > 0 ) {
+if( isset( $studentId ) ) {
     if($_POST) {
         $en_name = clean_data($_POST['en_name']);
         $zh_name = clean_data($_POST['zh_name']);
@@ -78,8 +78,14 @@ if( $studentId > 0 ) {
 
 
     } else {
-        $studentDetail = $oHelper->select_table('student', " id = $studentId ", 0, 1)->fetch();
 
+    	if ( $studentId > 0 ) {
+		    $studentDetail = $oHelper->select_table('student', " id = $studentId ", 0, 1)->fetch();
+	    } else {
+		    $studentDetail = $oHelper->select_table('student', " student_code = '$studentId' ", 0, 1)->fetch();
+	    }
+
+	    $studentCode = $studentDetail['student_code'];
         $studentSchoolCode = $studentDetail['school'];
         $creatorName = $studentDetail['creator'] == 0 || $studentDetail['creator'] == '' ? 'system' : '';
 
@@ -98,5 +104,16 @@ if( $studentId > 0 ) {
             $school['active'] = $school['school_code'] == $studentSchoolCode ? 'selected' : '';
             $tpl->assign($school, 'en_school');
         }
+
+        // List of student who was referenced by
+	    $cond = "s.referrer = '$studentCode'";
+
+	    $referencedStudents = $oHelper->get_student($cond);
+	    $index = $page * $record - $record + 1;
+	    while ($student = $referencedStudents->fetch()) {
+		    $student['index'] = $index;
+		    $tpl->assign($student, 'students');
+		    $index++;
+	    }
     }
 }

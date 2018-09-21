@@ -107,7 +107,7 @@
         <div class="form-group row">
             <label for="reference" class="col-2 col-form-label">Reference</label>
             <div class="col-9">
-                <input id="reference" name="reference" class="form-control" type="number" value="{student.referrer}">
+                <input id="reference" name="reference" class="form-control" type="text" value="{student.referrer}{referrer}">
             </div>
             <div class="col-1">
                 - <a target="_blank" href="/student/detail/{student.referrer}" class="btn btn-info">Detail</a>

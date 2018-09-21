@@ -72,6 +72,11 @@ if($_POST) {
 
 } else {
 
+	$referrer = clean_data( $system->params[2] );
+	if ( isset( $referrer ) ) {
+		$tpl->assign( array('referrer' => $referrer) );
+	}
+
     $schools = $oHelper->get_school(1, 0, 0, 'zh_name');
     foreach ($schools as $school) {
         $school['active'] = $school['school_code'] == $studentSchoolCode ? 'selected' : '';

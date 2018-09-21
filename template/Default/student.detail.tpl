@@ -79,7 +79,7 @@
                 <div class="form-group row">
                     <label for="reference" class="col-2 col-form-label">Reference</label>
                     <div class="col-9">
-                        <input id="reference" name="reference" class="form-control" type="number" value="{student.referrer}">
+                        <input id="reference" name="reference" class="form-control" type="text" value="{student.referrer}">
                     </div>
                     <div class="col-1">
                         - <a target="_blank" href="/student/detail/{student.referrer}" class="btn btn-info">Detail</a>
@@ -111,6 +111,7 @@
                     <div class="col-12 text-right">
                         <button type="submit" class="btn btn-primary">Update</button>
                         <button type="reset" class="btn btn-success">Reset</button>
+                        <a href="{module.student}/{student_action.create}/{student.student_code}" class="btn btn-info">Become a referrer</a>
                     </div>
                 </div>
             </form>
@@ -223,5 +224,53 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <h3 class="page-header">Referred to:</h3>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Old code</th>
+                <th>Name</th>
+                <th>School</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--BASIC students-->
+            <tr>
+                <td><a href="{module.student}/detail/{students.id}">{students.index}</a></td>
+                <td><a href="{module.student}/detail/{students.id}">{students.student_code}</a></td>
+                <td>{students.student_old_code}</td>
+                <td>{students.zh_name} - {students.en_name}</td>
+                <td>{students.school} - {students.school_zh_name}</td>
+                <td>{students.datetime}</td>
+                <td>
+                    <a href="{module.student}/detail/{students.id}" class="btn btn-info">View</a>
+                </td>
+            </tr>
+            <!--BASIC students-->
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Old code</th>
+                <th>Name</th>
+                <th>School</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+            </tfoot>
+        </table>
+
+        <ul class="pagination">
+            {paging.page}
+        </ul>
     </div>
 </div>
