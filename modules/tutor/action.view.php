@@ -3,7 +3,7 @@
 if(!defined('_ROOT')) { exit('Access Denied'); }
 
 $tpl->setfile(
-	array('body'=>'student.tpl',)
+	array('body'=>'tutor.tpl',)
 );
 
 $keyword = clean_data( $_GET['keyword'] );
@@ -17,8 +17,7 @@ if ( $_POST ) {
 
 $cond = 1;
 if ($keyword != '') {
-    $cond = "(s.student_code = '$keyword' OR s.student_old_code = '$keyword' OR s.en_name = '$keyword' OR s.zh_name = '$keyword'
-            OR s.mobile = '$keyword' OR s.home_tel = '$keyword' OR s.parent_tel = '$keyword' OR s.remarks LIKE '%$keyword%')";
+    $cond = "(t.name LIKE '%$keyword%')";
 }
 
 $record = 20;
@@ -27,14 +26,15 @@ $url = $system->uri;
 $page = intval($_GET['page']) <= 0 ? 1 : intval($_GET['page']);
 $start = ($page - 1) * $record;
 
-$totalRecord = $oHelper->count_table('student', $cond);
+$totalRecord = $oHelper->count_table('teacher', $cond);
 $totalPage = @ceil($totalRecord / $record);
 
-$students = $oHelper->get_student($cond, $start, $record);
+$tutors = $oHelper->select_table('teacher t', $cond, $start, $record);
 $index = $page * $record - $record + 1;
-while ($student = $students->fetch()) {
-    $student['index'] = $index;
-    $tpl->assign($student, 'student');
+while ($tutor = $tutors->fetch()) {
+	$tutor['index'] = $index;
+	$tutor['status'] = $tutor['status'] == 1 ? 'checked=""': '0';
+    $tpl->assign($tutor, 'tutor');
     $index++;
 }
 

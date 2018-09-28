@@ -26,7 +26,6 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fileinput.min.css">
-    <link rel="stylesheet" href="css/ui-grid.min.css">
     <link rel="stylesheet" href="css/style.css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,6 +33,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        AJAX_URL = '{system.domain}{system.project}ajax';
+    </script>
 
 </head>
 <body>
@@ -68,21 +71,22 @@
     <div class="row">
 
         <div class="col-sm-2 col-md-1 sidebar">
-            <h4>Student</h4>
+            <h4>Students</h4>
             <ul class="nav nav-sidebar">
                 <li class="{actionActive.student-view} {actionActive.student-detail}"><a href="{module.student}">List</a></li>
-                <li class="{actionActive.student-create}"><a href="{module.student}/{student_action.create}">New student</a></li>
+                <li class="{actionActi  ve.student-create}"><a href="{module.student}/{student_action.create}">New student</a></li>
                 <li class="{actionActive.student-no-school}"><a href="{module.student}/{student_action.no-school}">No school</a></li>
             </ul>
-            <h4>School</h4>
+            <h4>Schools</h4>
             <ul class="nav nav-sidebar">
                 <li class="{actionActive.school-view} {actionActive.school-detail}"><a href="{module.school}">List</a></li>
                 <li class="{actionActive.school-create}"><a href="{module.school}/{school_action.create}">New school</a></li>
             </ul>
-            <!--<h4>Price Mapping</h4>
+            <h4>Tutors</h4>
             <ul class="nav nav-sidebar">
-                <li class="{sub_menu_active.mapping} {sub_menu_active.mapping_edit}"><a href="/mapping">Import</a></li>
-            </ul>-->
+                <li class="{actionActive.tutor-view} {actionActive.tutor-detail}"><a href="{module.tutor}">List</a></li>
+                <li class="{actionActive.tutor-create}"><a href="{module.tutor}/{tutor_action.create}">New tutor</a></li>
+            </ul>
         </div>
 
         <div class="col-sm-10 col-sm-offset-2 col-md-11 col-md-offset-1 main">

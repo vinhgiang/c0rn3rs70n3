@@ -24,7 +24,11 @@ $(document).ready(function(){
         var url = $(this).attr('action');
         $.post(url, $(this).serialize(), function (response) {
             if(response.code == 1) {
-                window.location.reload();
+                if ( response.redirect ) {
+                    window.location = response.redirect;
+                } else {
+                    window.location.reload();
+                }
             } else {
                 $('.pop-msg').html(response.msg);
                 $('.alert-danger').removeClass('hidden');
@@ -67,6 +71,15 @@ $(document).ready(function(){
     $(document).on('click', '.select-referrer', function () {
         var studentCode = $(this).data('student-code');
         $('#reference').val(studentCode);
+    });
+
+    $(document).on('change', '.toggleTutor', function () {
+        var value = $(this).is( ":checked" );
+        var id = $(this).data('id');
+
+        $.post(AJAX_URL + '/toggleTutor', {id: id, value: value}, function (response) {
+            console.log(response);
+        }, 'JSON');
     });
 });
 

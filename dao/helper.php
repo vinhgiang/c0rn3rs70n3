@@ -94,4 +94,8 @@ class HelperDAO extends Model{
         return $rs;
     }
 
+	function toggleColumn($id, $table, $column){
+		return $this->db->query("UPDATE ".$this->prefix."$table SET `$column` = ABS(`$column` - 1) WHERE `id` = ".intval($id));
+	}
+
 }
