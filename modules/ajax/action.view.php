@@ -3,6 +3,10 @@
 if(!defined('_ROOT')) { exit('Access Denied'); }
 
 $tpl->setfile(
-    array('body'=>'list.tpl')
+    array('body'=>'home.tpl',)
 );
-exit;
+
+$keyword = $_GET['keyword'];
+if($keyword != '') {
+    $hook->redirect($system->domain . $system->project . $system->modules['data']['student'][$this->lang]['module'] . '/?keyword=' . $keyword);
+}

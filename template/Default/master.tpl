@@ -87,6 +87,11 @@
                 <li class="{actionActive.tutor-view} {actionActive.tutor-detail}"><a href="{module.tutor}">List</a></li>
                 <li class="{actionActive.tutor-create}"><a href="{module.tutor}/{tutor_action.create}">New tutor</a></li>
             </ul>
+            <h4>Level</h4>
+            <ul class="nav nav-sidebar">
+                <li class="{actionActive.level-view} {actionActive.level-detail}"><a href="{module.level}">List</a></li>
+                <li class="{actionActive.level-create}"><a href="{module.level}/{level_action.create}">New level</a></li>
+            </ul>
         </div>
 
         <div class="col-sm-10 col-sm-offset-2 col-md-11 col-md-offset-1 main">

@@ -73,11 +73,12 @@ $(document).ready(function(){
         $('#reference').val(studentCode);
     });
 
-    $(document).on('change', '.toggleTutor', function () {
+    $(document).on('change', '.toggleStatus', function () {
         var value = $(this).is( ":checked" );
         var id = $(this).data('id');
+        var type = $(this).data('type');
 
-        $.post(AJAX_URL + '/toggleTutor', {id: id, value: value}, function (response) {
+        $.post(AJAX_URL + '/toggle' + type, {id: id, value: value}, function (response) {
             console.log(response);
         }, 'JSON');
     });

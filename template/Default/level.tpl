@@ -1,37 +1,40 @@
-<h1 class="page-header">Tutor list ({paging.totalRecord})</h1>
+<h1 class="page-header">Level list ({paging.totalRecord})</h1>
 <div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Level english name</th>
+                <th>Level chinese name</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <!--BASIC tutor-->
+            <!--BASIC level-->
             <tr>
-                <td><a href="{module.tutor}/detail/{tutor.id}">{tutor.index}</a></td>
-                <td>{tutor.name}</td>
+                <td><a href="{module.level}/detail/{level.id}">{level.index}</a></td>
+                <td>{level.en_name}</td>
+                <td>{level.zh_name}</td>
                 <td>
                     <label class="switch">
-                        <input type="checkbox" {tutor.status} class="toggleStatus" data-type="Tutor" data-id="{tutor.id}" >
+                        <input type="checkbox" {level.status} class="toggleStatus" data-type="Level" data-id="{level.id}" >
                         <span class="slider round"></span>
                     </label>
                 </td>
-                <td>{tutor.datetime}</td>
+                <td>{level.datetime}</td>
                 <td>
-                    <a href="{module.tutor}/detail/{tutor.id}" class="btn btn-info">View</a>
+                    <a href="{module.level}/detail/{level.id}" class="btn btn-info">View</a>
                 </td>
             </tr>
-            <!--BASIC tutor-->
+            <!--BASIC level-->
         </tbody>
         <tfoot>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Level english name</th>
+                <th>Level chinese name</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th>Action</th>
