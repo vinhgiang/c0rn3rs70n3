@@ -92,6 +92,11 @@
                 <li class="{actionActive.level-view} {actionActive.level-detail}"><a href="{module.level}">List</a></li>
                 <li class="{actionActive.level-create}"><a href="{module.level}/{level_action.create}">New level</a></li>
             </ul>
+            <h4>Subject</h4>
+            <ul class="nav nav-sidebar">
+                <li class="{actionActive.subject-view} {actionActive.subject-detail}"><a href="{module.subject}">List</a></li>
+                <li class="{actionActive.subject-create}"><a href="{module.subject}/{subject_action.create}">New subject</a></li>
+            </ul>
         </div>
 
         <div class="col-sm-10 col-sm-offset-2 col-md-11 col-md-offset-1 main">
